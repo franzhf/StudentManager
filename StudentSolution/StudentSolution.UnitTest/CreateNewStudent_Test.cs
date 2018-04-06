@@ -9,10 +9,33 @@ namespace StudentSolution.UnitTest
     public class CreateNewStudent_Test
     {
         [TestMethod]
-        public void CreateNewStudent_CheckByName()
+        public void CreateNewStudent_CheckIfExists()
         {
 
             IStudentManager manager = new StudentManager();
+            Student oJhon = CreateOneStudent();
+            manager.Students.Add(oJhon);
+            bool szResult = manager.Exists(oJhon);
+            Assert.IsTrue(szResult);
+        }
+
+        [TestMethod]
+        public void CreateNewStudent_SaveIt_CSV_File()
+        {
+            IStudentManager manager = new StudentManager();
+            Student oJhon = CreateOneStudent();
+
+            
+        }
+
+        [TestMethod]
+        public void Save()
+        {
+
+        }
+
+        private Student CreateOneStudent()
+        {
             Student szJhon = new Student
             {
                 Type = StudentType.High,
@@ -20,9 +43,8 @@ namespace StudentSolution.UnitTest
                 Gender = "Male",
                 TimeSpam = DateTime.Now
             };
-            manager.Students.Add(szJhon);
-            bool szResult = manager.Exists(szJhon);
-            Assert.IsTrue(szResult);
+            return szJhon;
         }
+
     }
 }
