@@ -15,7 +15,7 @@ namespace StudentSolution.UnitTest
             IStudentManager manager = new StudentManager();
             Student szJhon = new Student
             {
-                Type = "High",
+                Type = StudentType.High,
                 Name = "Jhon",
                 Gender = "Male",
                 TimeSpam = DateTime.Now
