@@ -11,19 +11,18 @@ namespace StudentSolution.UnitTest
         [TestMethod]
         public void CreateNewStudent_CheckByName()
         {
-            
-            IStudentManager manager = new StudentManager();
-            int iNumberOfStudent = students.count;
-            Student szJhon = new Student()
-            {
-                Type: "High",
-                Name: "Jhon",
-                Gender: "Male",
-                TimeSpam: DateTime
 
+            IStudentManager manager = new StudentManager();
+            Student szJhon = new Student
+            {
+                Type = "High",
+                Name = "Jhon",
+                Gender = "Male",
+                TimeSpam = DateTime.Now
             };
-            students.Add(szJhon);
-            string szResult = manager.Exists(szJhon.Name);
-            Assert.AreEqual(iNumberOfStudent, szResult);
+            manager.Students.Add(szJhon);
+            bool szResult = manager.Exists(szJhon);
+            Assert.IsTrue(szResult);
+        }
     }
 }
