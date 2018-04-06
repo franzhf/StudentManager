@@ -2,6 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StudentSolution.FileManagment;
+using StudentSolution.Data;
 
 namespace StudentSolution.UnitTest
 {
@@ -11,11 +13,20 @@ namespace StudentSolution.UnitTest
     [TestClass]
     public class HandleFile_Testing
     {
+
+        Student _oNewStudent;
         public HandleFile_Testing()
         {
             //
             // TODO: Add constructor logic here
             //
+            _oNewStudent = new Student
+            {
+                Type = StudentType.High,
+                Name = "Jhon",
+                Gender = "Male",
+                TimeSpam = DateTime.Now
+            };
         }
 
 
@@ -24,17 +35,17 @@ namespace StudentSolution.UnitTest
         {
             // I want to manage the information in a CSV file
             IFileFactory fileFactory = new FileFactory();
-            IHandleFile = fileFactory.GetFileType("CSV");
+            IHandleFile handleFile = fileFactory.GetFileType("CSV");
 
             string szPath = "inputTest.csv";
-            IHandleFile.Write(oNewStudent, szPath);
-            IEnumerable<Student> oStudents = IHandleFile.Read(szPath);
+            handleFile.Write(_oNewStudent, szPath);
+            IEnumerable<Student> oStudents = handleFile.Read(szPath);
 
-            var oReadStudent = null;
-            if (oStudents.Count > 0)
-                oReadStudent s = students[0];
+            Student oReadStudent = null;
+            foreach (var i in oStudents)
+                oReadStudent = i;
 
-            Assert.Equals(oReadStudent, oNewStudent);
+            Assert.Equals(oReadStudent, _oNewStudent);
         }
     }
 }
