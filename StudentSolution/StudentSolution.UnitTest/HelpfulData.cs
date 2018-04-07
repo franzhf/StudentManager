@@ -14,7 +14,7 @@ namespace StudentSolution.UnitTest
             {
                 Type = StudentType.High,
                 Name = "Jhon",
-                Gender = 'M',
+                Gender = "M",
                 TimeSpam = oTimeSpam
             };
             return szJhon;

@@ -20,21 +20,7 @@ namespace StudentSolution.FileManagment
         }
 
 
-        public static StudentType SetStudentType(string value)
-        {
-            StudentType oType = StudentType.High;
 
-            if (value == StudentType.High.ToString())
-                oType = StudentType.High;
-            else if (value == StudentType.Elementary.ToString())
-                oType = StudentType.Elementary;
-            else if (value == StudentType.university.ToString())
-                oType = StudentType.university;
-            else if (value == StudentType.Kinder.ToString())
-                oType = StudentType.Kinder;
-
-            return oType;
-        }
 
 
         public static Student ParserCSVFormatToStudent(string szLine)
@@ -42,11 +28,11 @@ namespace StudentSolution.FileManagment
             string [] oLines = szLine.Split(',');
             Student student = new Student()
             {
-                Type = SetStudentType(oLines[0]),
                 Name = oLines[1],
-                Gender = Convert.ToChar(oLines[2]),
+                Gender = oLines[2],
                 TimeSpam = ConvertCSVDateToTimeSpam(oLines[3])
             };
+            student.SetStudentType(oLines[0]);
             return student;
         }
 
