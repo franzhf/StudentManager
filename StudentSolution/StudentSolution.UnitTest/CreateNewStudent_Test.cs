@@ -13,7 +13,7 @@ namespace StudentSolution.UnitTest
         {
 
             IStudentManager manager = new StudentManager();
-            Student oJhon = CreateOneStudent();
+            Student oJhon = HelpfulData.CreateOneStudent(DateTime.Now);
             manager.Students.Add(oJhon);
             bool szResult = manager.Exists(oJhon);
             Assert.IsTrue(szResult);
@@ -23,8 +23,7 @@ namespace StudentSolution.UnitTest
         public void CreateNewStudent_SaveIt_CSV_File()
         {
             IStudentManager manager = new StudentManager();
-            Student oJhon = CreateOneStudent();
-
+            Student oJhon = HelpfulData.CreateOneStudent(DateTime.Now);
             
         }
 
@@ -34,17 +33,7 @@ namespace StudentSolution.UnitTest
 
         }
 
-        private Student CreateOneStudent()
-        {
-            Student szJhon = new Student
-            {
-                Type = StudentType.High,
-                Name = "Jhon",
-                Gender = "Male",
-                TimeSpam = DateTime.Now
-            };
-            return szJhon;
-        }
+
 
     }
 }

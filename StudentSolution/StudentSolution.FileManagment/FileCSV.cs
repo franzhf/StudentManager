@@ -14,7 +14,7 @@ namespace StudentSolution.FileManagment
             using (StreamReader oFile = new StreamReader(szPath))
             {
                 string szLine = oFile.ReadLine();
-                while(string.IsNullOrEmpty(szLine ))
+                while(!string.IsNullOrEmpty(szLine ))
                 {
                     oStudents.Add(FileCSVHelper.ParserCSVFormatToStudent(szLine));
                     szLine = oFile.ReadLine();

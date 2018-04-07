@@ -16,7 +16,7 @@ namespace StudentSolution.Data
 
         public StudentType Type { get; set; }
 
-        public string Gender { get; set; }
+        public char Gender { get; set; }
 
         public DateTime TimeSpam { get; set; }
 
