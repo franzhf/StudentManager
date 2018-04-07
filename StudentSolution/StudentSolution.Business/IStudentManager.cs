@@ -7,9 +7,10 @@ namespace StudentSolution.Business
 {
     public interface IStudentManager
     {
-        List<Student> Students { get; set; }
+        bool Compare(Student a, Student b);
 
-        bool Exists(Student oStudent);
-        
+        IEnumerable<Student> Search(string szWhere);
+
+
     }
 }

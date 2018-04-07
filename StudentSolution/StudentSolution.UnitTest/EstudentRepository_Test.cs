@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StudentSolution.Data;
 using System.Collections.Generic;
+using StudentSolution.Business;
 
 namespace StudentSolution.UnitTest
 {
@@ -16,9 +17,10 @@ namespace StudentSolution.UnitTest
             IStudentRepository oRepo = new EstudentRepository(oContext);
             oRepo.Add(oInputStudent);
 
+            IStudentManager manage = new StudentManager(oRepo);
             // Commandline   :   "name=jhon gender=M"
             string szInputCommandLine = "name=jhon gender=M";
-            IEnumerable<Student> oResult = oRepo.Search(szInputCommandLine);
+            IEnumerable<Student> oResult = manage.Search(szInputCommandLine);
             Student oExpectResult = null;
 
             //should be match one

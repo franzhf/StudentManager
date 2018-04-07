@@ -18,11 +18,7 @@ namespace StudentSolution.FileManagment
             oSb.Append(ConvertTimeSpamForCSV(oStudent.TimeSpam));            
             return oSb.ToString();
         }
-
-
-
-
-
+                
         public static Student ParserCSVFormatToStudent(string szLine)
         {
             string [] oLines = szLine.Split(',');

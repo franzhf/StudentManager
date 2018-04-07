@@ -1,12 +1,19 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StudentSolution.Data;
+using StudentSolution.Business;
 
 namespace StudentSolution.UnitTest
 {
     [TestClass]
     public class StudentCompare_Test
     {
+        IStudentManager _oManage;
+        public StudentCompare_Test()
+        {
+            _oManage = new StudentManager(null);
+        }
+
         [TestMethod]
         public void Compare_NamePropertySetUp()
         {
@@ -22,7 +29,7 @@ namespace StudentSolution.UnitTest
                 Name = "Jhon"
             };
 
-            bool bOutput = a.Compare(b);
+            bool bOutput = _oManage.Compare(a,b);
             Assert.IsTrue(bOutput);            
         }
 
@@ -42,7 +49,7 @@ namespace StudentSolution.UnitTest
                 Type = StudentType.High
             };
             
-            bool bOutput = a.Compare(b);
+            bool bOutput = _oManage.Compare(a, b);
             Assert.IsTrue(bOutput);
         }
 
@@ -62,7 +69,7 @@ namespace StudentSolution.UnitTest
                 Gender = "M"
             };
 
-            bool bOutput = a.Compare(b);
+            bool bOutput = _oManage.Compare(a, b);
             Assert.IsTrue(bOutput);
         }
 
@@ -83,7 +90,7 @@ namespace StudentSolution.UnitTest
                 Type = StudentType.High
             };
 
-            bool bOutput = a.Compare(b);
+            bool bOutput = _oManage.Compare(a,b);
             Assert.IsTrue(bOutput);
         }
     }

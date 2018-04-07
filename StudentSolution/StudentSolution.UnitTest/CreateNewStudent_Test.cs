@@ -8,7 +8,7 @@ namespace StudentSolution.UnitTest
     [TestClass]
     public class CreateNewStudent_Test
     {
-        [TestMethod]
+        /*[TestMethod]
         public void CreateNewStudent_CheckIfExists()
         {
 
@@ -31,7 +31,7 @@ namespace StudentSolution.UnitTest
         public void Save()
         {
 
-        }
+        }*/
 
 
 

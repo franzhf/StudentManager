@@ -5,13 +5,15 @@ VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSolution.UnitTest", "StudentSolution.UnitTest\StudentSolution.UnitTest.csproj", "{14F7D597-7915-4E69-A6BD-268428278896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSolution.Business", "StudentSolution.Business\StudentSolution.Business.csproj", "{7401EE70-264D-44E4-A582-C85D92AB570A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentSolution.Business", "StudentSolution.Business\StudentSolution.Business.csproj", "{7401EE70-264D-44E4-A582-C85D92AB570A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSolution.Data", "StudentSolution.Data\StudentSolution.Data.csproj", "{AE9DC37E-5498-4926-8927-AF85027E3E63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentSolution.Data", "StudentSolution.Data\StudentSolution.Data.csproj", "{AE9DC37E-5498-4926-8927-AF85027E3E63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSolution.FileManagment", "StudentSolution.FileManagment\StudentSolution.FileManagment.csproj", "{152DEA88-3729-4EA1-875B-97961CFE96CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentSolution.FileManagment", "StudentSolution.FileManagment\StudentSolution.FileManagment.csproj", "{152DEA88-3729-4EA1-875B-97961CFE96CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSolution.Common", "StudentSolution.Common\StudentSolution.Common.csproj", "{BB466FF8-3153-4B41-836A-1560A0932F2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentSolution.Common", "StudentSolution.Common\StudentSolution.Common.csproj", "{BB466FF8-3153-4B41-836A-1560A0932F2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSolution.ConsoleWeb", "StudentSolution.ConsoleWeb\StudentSolution.ConsoleWeb.csproj", "{0A62820F-43E0-4257-925D-74F6FC141056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BB466FF8-3153-4B41-836A-1560A0932F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB466FF8-3153-4B41-836A-1560A0932F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB466FF8-3153-4B41-836A-1560A0932F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A62820F-43E0-4257-925D-74F6FC141056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A62820F-43E0-4257-925D-74F6FC141056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A62820F-43E0-4257-925D-74F6FC141056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A62820F-43E0-4257-925D-74F6FC141056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

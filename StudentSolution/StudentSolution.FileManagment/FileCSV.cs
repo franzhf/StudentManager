@@ -31,7 +31,5 @@ namespace StudentSolution.FileManagment
                 file.Write(szLine);
             }
         }
-
-
     }
 }
