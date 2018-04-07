@@ -18,12 +18,15 @@ namespace StudentSolution.ConsoleWeb
 
             IFileFactory fileFactory = new FileFactory();
             IHandleFile handleFile = fileFactory.GetFileType("CSV");
+            
             IStudentRepository oRepo = null;
             IStudentManager oManager = null;
+
             try
             {
-                oRepo = new StudentRepository(handleFile.Read(szLine));
-                oManager = new StudentManager(oRepo);                
+                handleFile.Path = szLine;
+                oRepo = new StudentRepository(handleFile.Read());
+                oManager = new StudentManager(oRepo, handleFile);                
             }
             catch (Exception ex)
             {
@@ -34,17 +37,25 @@ namespace StudentSolution.ConsoleWeb
             
             if(oManager!= null)
             {
-                Console.WriteLine("Search Operation - Enter a command (e.g name = ana type = kinder");
+                Console.WriteLine("Search Operation - Enter a command (e.g name=ana type=kinder");
                 szLine = Console.ReadLine();
                 Print(oManager.Search(szLine));
-                Console.Read();
             }
 
 
-            Console.WriteLine("Create Operation - Enter a command (e.g name = ana type = kinder");
+            Console.WriteLine("Create Operation - Enter file path (e.g create.csv");          
             szLine = Console.ReadLine();
-            Print(oManager.Search(szLine));
+            oManager.Save(handleFile.Read(szLine));
+            oManager.Sync();
+            Print(oRepo.GetContext());
+
+
             Console.Read();
+        }
+
+        private static void CreateOption()
+        {
+            
         }
 
         private static void Print(IEnumerable<Student> collection)

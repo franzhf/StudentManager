@@ -17,7 +17,7 @@ namespace StudentSolution.UnitTest
             IStudentRepository oRepo = new StudentRepository(oContext);
             oRepo.Add(oInputStudent);
 
-            IStudentManager manage = new StudentManager(oRepo);
+            IStudentManager manage = new StudentManager(oRepo, null);
             // Commandline   :   "name=jhon gender=M"
             string szInputCommandLine = "name=jhon gender=M";
             IEnumerable<Student> oResult = manage.Search(szInputCommandLine);

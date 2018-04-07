@@ -11,7 +11,7 @@ namespace StudentSolution.UnitTest
         IStudentManager _oManage;
         public StudentCompare_Test()
         {
-            _oManage = new StudentManager(null);
+            _oManage = new StudentManager(null, null);
         }
 
         [TestMethod]

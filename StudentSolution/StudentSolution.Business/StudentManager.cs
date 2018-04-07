@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 using StudentSolution.Data;
+using StudentSolution.FileManagment;
 using System.Linq;
 namespace StudentSolution.Business
 {
     public class StudentManager : IStudentManager
     {
         IStudentRepository _oRepository;
+        IHandleFile _oHandleFile;
 
-        public StudentManager(IStudentRepository oRepository)
+        public StudentManager(IStudentRepository oRepository, IHandleFile oHandleFile)
         {
             _oRepository = oRepository;
+            _oHandleFile = oHandleFile;
+
         }
 
         public bool Compare(Student a, Student b)
@@ -77,7 +81,24 @@ namespace StudentSolution.Business
            return oStudents;
        }
 
-       
+       public void Sync()
+       {
+            foreach (var oStudent in _oRepository.GetContext())
+            {
+                if (oStudent.IsSync == false)
+                    this._oHandleFile.Write(oStudent);
+            }
+       }
 
+       public void Save (List<Student> students)
+       {
+            foreach (var oStudent in students)
+                Save(oStudent);
+       }
+
+        public void Save(Student student)
+        {
+            this._oRepository.Add(student);
+        }
     }
 }

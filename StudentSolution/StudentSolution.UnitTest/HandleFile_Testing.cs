@@ -22,8 +22,8 @@ namespace StudentSolution.UnitTest
             IHandleFile handleFile = fileFactory.GetFileType("CSV");
             string szPath = "inputTest.csv";
             Student oInputStudent = HelpfulData.CreateOneStudent(DateTime.Now);
-
-            handleFile.Write(oInputStudent, szPath);
+            handleFile.Path = szPath;
+            handleFile.Write(oInputStudent);
             IEnumerable<Student> oStudents = handleFile.Read(szPath);
 
             Student oOutputStudent = null;

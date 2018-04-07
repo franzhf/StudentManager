@@ -22,6 +22,8 @@ namespace StudentSolution.Data
 
         public DateTime TimeStamp { get; set; }
 
+        public bool IsSync { get; set; }
+
         public void SetStudentType(string value)
         {
             StudentType oType = StudentType.High;

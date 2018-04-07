@@ -22,12 +22,17 @@ namespace StudentSolution.FileManagment
         public static Student ParserCSVFormatToStudent(string szLine)
         {
             string [] oLines = szLine.Split(',');
+            string szTimeStamp = string.Empty;
+            if (oLines.Length > 4)
+                szTimeStamp = oLines[3];
             Student student = new Student()
             {
                 Name = oLines[1],
                 Gender = oLines[2],
-                TimeStamp = ConvertCSVDateToTimeStamp(oLines[3])
+                TimeStamp = ConvertCSVDateToTimeStamp(szTimeStamp),
+                IsSync = true                
             };
+
             student.SetStudentType(oLines[0]);
             return student;
         }
@@ -52,6 +57,8 @@ namespace StudentSolution.FileManagment
             //20181218120
             //20181231180120
 
+            if (string.IsNullOrEmpty(szTimeStamp))
+                return DateTime.Now;
 
             string szYear = szTimeStamp.Substring(0,4);            
             string szMonth = szTimeStamp.Substring(4, 2);

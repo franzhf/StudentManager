@@ -18,6 +18,7 @@ namespace StudentSolution.Data
                 
         public void Add(Student oStudent)
         {
+            oStudent.IsSync = false;
             _oContext.Add(oStudent);
         }
 

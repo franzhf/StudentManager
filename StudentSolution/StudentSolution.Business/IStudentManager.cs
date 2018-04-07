@@ -11,6 +11,11 @@ namespace StudentSolution.Business
 
         IEnumerable<Student> Search(string szWhere);
 
+        void Sync();
+
+        void Save(List<Student> oStudents);
+
+        void Save(Student oStudent);
 
     }
 }
