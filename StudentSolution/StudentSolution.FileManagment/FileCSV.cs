@@ -8,7 +8,7 @@ namespace StudentSolution.FileManagment
 {
     public class FileCSV : IHandleFile
     {
-        public IEnumerable<Student> Read(string szPath)
+        public List<Student> Read(string szPath)
         {
             List<Student> oStudents = new List<Student>();
             using (StreamReader oFile = new StreamReader(szPath))

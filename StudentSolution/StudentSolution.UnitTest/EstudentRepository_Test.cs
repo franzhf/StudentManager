@@ -14,7 +14,7 @@ namespace StudentSolution.UnitTest
         {
             List<Student> oContext = new List<Student>();
             Student oInputStudent = HelpfulData.CreateOneStudent(DateTime.Now);
-            IStudentRepository oRepo = new EstudentRepository(oContext);
+            IStudentRepository oRepo = new StudentRepository(oContext);
             oRepo.Add(oInputStudent);
 
             IStudentManager manage = new StudentManager(oRepo);

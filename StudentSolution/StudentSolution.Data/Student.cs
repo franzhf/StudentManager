@@ -20,7 +20,7 @@ namespace StudentSolution.Data
 
         public string Gender { get; set; }
 
-        public DateTime TimeSpam { get; set; }
+        public DateTime TimeStamp { get; set; }
 
         public void SetStudentType(string value)
         {

@@ -48,5 +48,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentSolution.Business\StudentSolution.Business.csproj">
+      <Project>{7401ee70-264d-44e4-a582-c85d92ab570a}</Project>
+      <Name>StudentSolution.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSolution.Data\StudentSolution.Data.csproj">
+      <Project>{ae9dc37e-5498-4926-8927-af85027e3e63}</Project>
+      <Name>StudentSolution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSolution.FileManagment\StudentSolution.FileManagment.csproj">
+      <Project>{152dea88-3729-4ea1-875b-97961cfe96ce}</Project>
+      <Name>StudentSolution.FileManagment</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

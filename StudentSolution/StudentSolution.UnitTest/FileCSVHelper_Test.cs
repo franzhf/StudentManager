@@ -16,7 +16,7 @@ namespace StudentSolution.UnitTest
             Student oInput = HelpfulData.CreateOneStudent(oCurrentDate);
             string szOutput = FileCSVHelper.ParserStudentToCSVFormat(oInput);
             string szExpectResult = string.Format("High,Jhon,M,{0}"
-                                    , FileCSVHelper.ConvertTimeSpamForCSV(oCurrentDate));
+                                    , FileCSVHelper.ConvertTimeStampForCSV(oCurrentDate));
             Assert.AreEqual(szOutput, szExpectResult);
         }
 
@@ -26,18 +26,18 @@ namespace StudentSolution.UnitTest
             // Expect Result:   Student {}
             DateTime oCurrentDate = DateTime.Now;
             string szInput = string.Format("High,Jhon,M,{0}"
-                              , FileCSVHelper.ConvertTimeSpamForCSV(oCurrentDate));
+                              , FileCSVHelper.ConvertTimeStampForCSV(oCurrentDate));
             Student oOutput = FileCSVHelper.ParserCSVFormatToStudent(szInput);
             Student oExpectResult = HelpfulData.CreateOneStudent(oCurrentDate);
-            Assert.AreEqual(oOutput.TimeSpam.ToLongDateString(), oExpectResult.TimeSpam.ToLongDateString());
+            Assert.AreEqual(oOutput.TimeStamp.ToLongDateString(), oExpectResult.TimeStamp.ToLongDateString());
         }
 
         [TestMethod]
-        public void ConvertTimeSpamForCSV()
+        public void ConvertTimeStampForCSV()
         {
             //  Expect Result: 20181231180120
             DateTime oInputDate = DateTime.Now;
-            string szOutputDate = FileCSVHelper.ConvertTimeSpamForCSV(oInputDate);
+            string szOutputDate = FileCSVHelper.ConvertTimeStampForCSV(oInputDate);
             //YYYYMMDDHHMMSS
             string szExpectResult = string.Format("2018{0}{1}{2}{3}{4}"
                                     , FileCSVHelper.KeepInTwoDigit(oInputDate.Month)
@@ -49,7 +49,7 @@ namespace StudentSolution.UnitTest
         }
 
         [TestMethod]
-        public void ConvertCSVDateToTimeSpam()
+        public void ConvertCSVDateToTimeStamp()
         {
             // Expect Result:   Student {}
             DateTime oExpectResult = DateTime.Now;
@@ -60,9 +60,9 @@ namespace StudentSolution.UnitTest
                                 ,FileCSVHelper.KeepInTwoDigit(oExpectResult.Minute)
                                 ,FileCSVHelper.KeepInTwoDigit(oExpectResult.Second));
 
-            DateTime oOutputDate = FileCSVHelper.ConvertCSVDateToTimeSpam(szInputDate);
+            DateTime oOutputDate = FileCSVHelper.ConvertCSVDateToTimeStamp(szInputDate);
 
-            Assert.AreEqual(FileCSVHelper.ConvertTimeSpamForCSV(oOutputDate), FileCSVHelper.ConvertTimeSpamForCSV(oExpectResult));
+            Assert.AreEqual(FileCSVHelper.ConvertTimeStampForCSV(oOutputDate), FileCSVHelper.ConvertTimeStampForCSV(oExpectResult));
         }
 
     }

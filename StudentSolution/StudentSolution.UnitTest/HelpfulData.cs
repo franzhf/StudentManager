@@ -8,14 +8,14 @@ namespace StudentSolution.UnitTest
 {
     public static class HelpfulData
     {
-        public static Student CreateOneStudent(DateTime oTimeSpam)
+        public static Student CreateOneStudent(DateTime oTimeStamp)
         {
             Student szJhon = new Student
             {
                 Type = StudentType.High,
                 Name = "Jhon",
                 Gender = "M",
-                TimeSpam = oTimeSpam
+                TimeStamp = oTimeStamp
             };
             return szJhon;
         }

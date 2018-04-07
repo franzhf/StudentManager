@@ -30,7 +30,7 @@ namespace StudentSolution.UnitTest
             foreach (var i in oStudents)
                 oOutputStudent = i;
 
-            Assert.AreEqual(oOutputStudent.TimeSpam.ToLongDateString(), oInputStudent.TimeSpam.ToLongDateString());
+            Assert.AreEqual(oOutputStudent.TimeStamp.ToLongDateString(), oInputStudent.TimeStamp.ToLongDateString());
         }
 
 

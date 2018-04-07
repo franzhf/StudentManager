@@ -15,7 +15,7 @@ namespace StudentSolution.FileManagment
             oSb.Append(",");
             oSb.Append(oStudent.Gender);
             oSb.Append(",");
-            oSb.Append(ConvertTimeSpamForCSV(oStudent.TimeSpam));            
+            oSb.Append(ConvertTimeStampForCSV(oStudent.TimeStamp));            
             return oSb.ToString();
         }
                 
@@ -26,13 +26,13 @@ namespace StudentSolution.FileManagment
             {
                 Name = oLines[1],
                 Gender = oLines[2],
-                TimeSpam = ConvertCSVDateToTimeSpam(oLines[3])
+                TimeStamp = ConvertCSVDateToTimeStamp(oLines[3])
             };
             student.SetStudentType(oLines[0]);
             return student;
         }
 
-        public static string ConvertTimeSpamForCSV(DateTime oDate)
+        public static string ConvertTimeStampForCSV(DateTime oDate)
         {
             StringBuilder oSb = new StringBuilder();
             oSb.Append(oDate.Year.ToString());
@@ -46,19 +46,19 @@ namespace StudentSolution.FileManagment
             return oSb.ToString();
         }
 
-        public static DateTime ConvertCSVDateToTimeSpam(string szTimeSpam)
+        public static DateTime ConvertCSVDateToTimeStamp(string szTimeStamp)
         {
             //20186418120
             //20181218120
             //20181231180120
 
 
-            string szYear = szTimeSpam.Substring(0,4);            
-            string szMonth = szTimeSpam.Substring(4, 2);
-            string szDay = szTimeSpam.Substring(6, 2);
-            string szHour = szTimeSpam.Substring(8, 2);
-            string szMinute = szTimeSpam.Substring(10, 2);
-            string szSecond = szTimeSpam.Substring(12, 2);
+            string szYear = szTimeStamp.Substring(0,4);            
+            string szMonth = szTimeStamp.Substring(4, 2);
+            string szDay = szTimeStamp.Substring(6, 2);
+            string szHour = szTimeStamp.Substring(8, 2);
+            string szMinute = szTimeStamp.Substring(10, 2);
+            string szSecond = szTimeStamp.Substring(12, 2);
 
             //"yyyy-MM-dd HH:mm:ss"
             DateTime oResult = DateTime.Parse( string.Format("{0}-{1}-{2} {3}:{4}:{5}", szYear, szMonth, szDay, szHour, szMinute, szSecond));

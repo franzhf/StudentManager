@@ -8,7 +8,7 @@ namespace StudentSolution.FileManagment
     public interface IHandleFile
     {
         void Write(Student oStudent,string szPath);
-        IEnumerable<Student> Read(string szPath);
+        List<Student> Read(string szPath);
 
     }
 }
